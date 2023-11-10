@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity;
+@using static MicrosoftEntraId.Auth.WebApp.Constants.AuthorizationConstants
+
+<div class="text-center">
+    <h1 class="display-4 mb-5 mt-4">Welcome</h1>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Assigned roles:</p>
+        @foreach (var claim in User.Claims.Where(x => x.Type == ClaimType.Role))
+        {
+            <h5>@claim.Value</h5>
+        }
+    }
+</div>

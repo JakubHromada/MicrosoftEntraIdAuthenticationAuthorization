@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MicrosoftEntraId.Auth.WebApp.props" />
+</Project>
